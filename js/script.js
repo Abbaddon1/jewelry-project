@@ -9,7 +9,6 @@ const initBurgerMenu = () => {
             menu.classList.toggle('_active');
         });
         menu.addEventListener('click', () => {
-            console.log('КАТЯ Писька')
             burgerMenu.classList.remove('_active');
             menu.classList.remove('_active');
             document.body.classList.remove('_lock')
@@ -20,11 +19,8 @@ const initBurgerMenu = () => {
 //прокрутка меню к разделам
 const initBurgerMenuLinks = () => {
     const burgerMenuLinks = document.querySelectorAll('.burger__menu__link[data-goto]');
-    // const burgerMenu = document.querySelector('.burger__menu');
-    // const menu = document.querySelector(".burger__menu__wrapper");
 
     burgerMenuLinks.forEach(link => {
-            // console.log(link);
         link.addEventListener('click', () => {
             link.removeAttribute('href');
             console.log(link);
@@ -34,9 +30,6 @@ const initBurgerMenuLinks = () => {
             console.log(goToBlock)
             const headerHeight = document.querySelector('header');
             const goToBlockTop = goToBlock.getBoundingClientRect().top + window.scrollY - headerHeight.clientHeight;
-            // console.log(goToBlockTop);
-            // console.log(goToBlock);
-            // console.log(goToBlockTop);
             window.scrollTo({
                 top: goToBlockTop,
                 behavior: 'smooth'
